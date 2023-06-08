@@ -26,7 +26,9 @@ v1.use('/*', async (c, next) => {
     iconsArray.push(lArray.split(',')[1]);
   }
 
-  const rawData = await fetch(`https://skillicons.dev/icons?i=${iconsArray.join(',')}`);
+  const rawData = await fetch(`https://skillicons.dev/icons?i=${iconsArray.join(',')}`, {
+    cf: { cacheEverything: true },
+  });
   const svgData = await rawData.text();
   
   c.set('iconsBuffer', svgData);
