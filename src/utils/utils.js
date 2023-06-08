@@ -60,6 +60,11 @@ const _addStyles = () => {
 }
 
 const _generateSingleSkill = (name, level, index, iconsBuffer) => {
+  // Validate level
+  if (isNaN(parseInt(level))) level = '100';
+  if (parseInt(level) < 0) level = '0';
+  if (parseInt(level) > 100) level = '100';
+
   const iconX = HORIZONTAL_MARGIN;
   // 16 = skill title font size, 32 = margin between title and skill svg, 48 = space between skills
   const iconY = VERTICAL_MARGIN + 16 + 32 + 48 * index;
@@ -106,9 +111,12 @@ const _generateSkillList = (l, iconsBuffer) => {
 }
 
 const generateSkillCard = (obj) => {
-  const l = obj.l;
-  const bgColor = obj.bg_color || 'FFF';
-  const bdColor = obj.bd_color || 'CCE5D5';
+  const l = obj.l || [];
+
+  const hexReg = /^[0-9A-F]{6}$/i;
+  const bgColor = hexReg.test(obj.bg_color) || 'FFF';
+  const bdColor = hexReg.test(obj.bg_color) || 'CCE5D5';
+
   const iconsBuffer = obj.iconsBuffer;
 
   // 32 = skill icon width, 16 = space between icon and language, 300 = skill bar width

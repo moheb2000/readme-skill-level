@@ -5,7 +5,21 @@ const { generateSkillCard } = require('../utils/utils');
 const v1 = new Hono();
 
 v1.use('/*', async (c, next) => {
-  const { l } = c.req.queries();
+  const q = c.req.queries();
+  const l = q.l || [];
+  
+  // Check l parameter validation
+  for (let item of l) {
+    const lang = item.split(',');
+    if (lang.length != 3) return c.json({ ok: false }, 400);
+  }
+
+  await next();
+});
+
+v1.use('/*', async (c, next) => {
+  const q = c.req.queries();
+  const l = q.l || [];
 
   let iconsArray = [];
   for (let lArray of l) {
