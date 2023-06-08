@@ -119,8 +119,8 @@ const generateSkillCard = (obj) => {
   const l = obj.l || [];
 
   const hexReg = /^[0-9A-F]{6}$/i;
-  const bgColor = hexReg.test(obj.bg_color) || 'FFF';
-  const bdColor = hexReg.test(obj.bg_color) || 'CCE5D5';
+  const bgColor = hexReg.test(obj.bg_color) ? obj.bg_color : 'FFF';
+  const bdColor = hexReg.test(obj.bd_color) ? obj.bd_color : 'CCE5D5';
 
   const iconsBuffer = obj.iconsBuffer;
 
