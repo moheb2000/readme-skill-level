@@ -40,6 +40,11 @@ const _addStyles = () => {
         font-weight: 700;
       }
 
+      .icon {
+        opacity: 0;
+        animation: fadeInAnimation 0.3s ease-in-out forwards;
+      }
+
       .language {
         font-size: 12px;
         font-weight: 500;
@@ -80,19 +85,19 @@ const _generateSingleSkill = (name, level, index, iconsBuffer) => {
 
   const skillSvg = `
   <g transform="translate(${iconX}, ${iconY})">
-    <svg width="32" height="32" viewBox="${(48 + 8.25) * index} 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="icon" width="32" height="32" viewBox="${(48 + 8.25) * index} 0 48 48" fill="none" style="animation-delay: ${300 + 200 * index}ms;">
       ${iconsBuffer}
     </svg>
   </g>
 
   <g transform="translate(${nameX}, ${nameY})">
-    <text class="language">${name}</text>
+    <text style="animation-delay: ${300 + 200 * index}ms;" class="language">${name}</text>
   </g>
 
   <g transform="translate(${levelX}, ${levelY})">
     <rect width="300" height="10" rx="5" ry="5" fill="#E4E9EF" />
     <svg width="${level / 100 * 300}">
-      <rect style="animation-delay: 750ms;" height="10" rx="5" ry="5" fill="#6DD594" class="level lang-progress" />
+      <rect style="animation-delay: ${300 + 200 * index}ms;" height="10" rx="5" ry="5" fill="#6DD594" class="level lang-progress" />
     </svg>
   </g>
   `;
