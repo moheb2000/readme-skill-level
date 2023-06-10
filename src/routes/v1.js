@@ -37,11 +37,11 @@ v1.use('/*', async (c, next) => {
 })
 
 v1.get('/', async c => {
-  const { l, bg_color, bd_color } = c.req.queries();
+  const { l, bg_color, bd_color, t_color, l_color, bar_color, bar_bg_color } = c.req.queries();
   const iconsBuffer = c.get('iconsBuffer') 
   c.header('Content-Type', 'image/svg+xml');
 
-  return c.body(generateSkillCard({ l, bg_color, bd_color, iconsBuffer }));
+  return c.body(generateSkillCard({ l, bg_color, bd_color, t_color, l_color, bar_color, bar_bg_color, iconsBuffer }));
 });
 
 module.exports = v1;

@@ -1,7 +1,7 @@
 const VERTICAL_MARGIN = 16;
 const HORIZONTAL_MARGIN = 16;
 
-const _addStyles = () => {
+const _addStyles = (barColor) => {
   const cardStyles = `
   <defs>
     <style type="text/css">
@@ -30,7 +30,6 @@ const _addStyles = () => {
       text {
         font-family: Ubuntu, sans-serif;
         text-transform: uppercase;
-        fill: #444;
         opacity: 0;
         animation: fadeInAnimation 0.3s ease-in-out forwards;
       }
@@ -51,7 +50,7 @@ const _addStyles = () => {
       }
 
       .level {
-        filter: drop-shadow(0 5px 5px rgba(109, 213, 148, 0.4));
+        filter: drop-shadow(0 5px 5px #${barColor}66);
       }
 
       .lang-progress {
@@ -64,7 +63,7 @@ const _addStyles = () => {
   return cardStyles;
 }
 
-const _generateSingleSkill = (name, level, index, iconsBuffer) => {
+const _generateSingleSkill = (name, level, index, iconsBuffer, lColor, barColor, barBgColor) => {
   // Validate level
   if (isNaN(parseInt(level))) level = '100';
   if (parseInt(level) < 0) level = '0';
@@ -91,13 +90,13 @@ const _generateSingleSkill = (name, level, index, iconsBuffer) => {
   </g>
 
   <g transform="translate(${nameX}, ${nameY})">
-    <text style="animation-delay: ${300 + 200 * index}ms;" class="language">${name}</text>
+    <text style="animation-delay: ${300 + 200 * index}ms;" class="language" fill="#${lColor}">${name}</text>
   </g>
 
   <g transform="translate(${levelX}, ${levelY})">
-    <rect width="300" height="10" rx="5" ry="5" fill="#E4E9EF" />
+    <rect width="300" height="10" rx="5" ry="5" fill="#${barBgColor}" />
     <svg width="${level / 100 * 300}">
-      <rect style="animation-delay: ${300 + 200 * index}ms;" height="10" rx="5" ry="5" fill="#6DD594" class="level lang-progress" />
+      <rect style="animation-delay: ${300 + 200 * index}ms;" height="10" rx="5" ry="5" fill="#${barColor}" class="level lang-progress" />
     </svg>
   </g>
   `;
@@ -105,11 +104,11 @@ const _generateSingleSkill = (name, level, index, iconsBuffer) => {
   return skillSvg;
 }
 
-const _generateSkillList = (l, iconsBuffer) => {
+const _generateSkillList = (l, iconsBuffer, lColor, barColor, barBgColor) => {
   let skillListSvg = '';
   for (let i = 0; i < l.length; i++) {
     const lang = l[i].split(',');
-    skillListSvg += _generateSingleSkill(lang[0], lang[2], i, iconsBuffer);
+    skillListSvg += _generateSingleSkill(lang[0], lang[2], i, iconsBuffer, lColor, barColor, barBgColor);
   }
 
   return skillListSvg;
@@ -121,6 +120,10 @@ const generateSkillCard = (obj) => {
   const hexReg = /^[0-9A-F]{6}$/i;
   const bgColor = hexReg.test(obj.bg_color) ? obj.bg_color : 'FFF';
   const bdColor = hexReg.test(obj.bd_color) ? obj.bd_color : 'CCE5D5';
+  const tColor = hexReg.test(obj.t_color) ? obj.t_color : '444';
+  const lColor = hexReg.test(obj.l_color) ? obj.l_color : '444';
+  const barColor = hexReg.test(obj.bar_color) ? obj.bar_color : '6DD594';
+  const barBgColor = hexReg.test(obj.bar_bg_color) ? obj.bar_bg_color : 'E4E9EF';
 
   const iconsBuffer = obj.iconsBuffer;
 
@@ -131,13 +134,13 @@ const generateSkillCard = (obj) => {
 
   const cardSvg = `
   <svg width="${svgWidth}" height="${svgHeight}" xmlns="http://www.w3.org/2000/svg">
-    ${_addStyles()}
+    ${_addStyles(barColor)}
     <rect width="100%" height="100%" rx="10" ry="10" fill="#${bgColor}" stroke="#${bdColor}" stroke-opacity="1" />
 
     <g transform="translate(${HORIZONTAL_MARGIN}, ${VERTICAL_MARGIN + 16})">
-      <text x="0" y="0" class="title">skills</text>
+      <text x="0" y="0" class="title" fill="#${tColor}">skills</text>
     </g>
-    ${_generateSkillList(l, iconsBuffer)}
+    ${_generateSkillList(l, iconsBuffer, lColor, barColor, barBgColor)}
   </svg>
   `;
 
