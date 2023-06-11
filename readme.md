@@ -26,25 +26,92 @@ The result is:
 
 ![Custom background](./screenshots/multiple-skills.png)
 ## Theming
-You can change some of colors in final svg.
+You can customize the color scheme of your language skill card with these options:
+### Options
+- `bg_color` - Card's background. Default: `FFFFFF`
+- `bd_color` - Card's border color. Default: `CCE5D5`
+- `t_color` - title color (SKILLS). Default: `444444`
+- `l_color` - Language name color. Default: `444444`
+- `bar_color` - Bar chart color. Default: `6DD594`
+- `bar_bg_color` - Bar chart background color. Default: `6DD594`
 > **Warning**
 > Keep in mind that you need to use hex colors for colors and you should provide it with **6 characters and without #** like this: `dd3737` and therefore `#dd3737` or `222` isn't valid for the API.
-### Change background color
-For changing background color use these codes:
+### Examples
+#### bg_color
 ```md
-[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bg_color=00005B)](https://github.com/moheb2000/readme-skill-level)
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bg_color=FDF0D5)](https://github.com/moheb2000/readme-skill-level)
 ```
-The result is:
 
-![Custom background](./screenshots/custom-background.png)
-### Change border color
-For changing border color use these codes:
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bg_color=FDF0D5)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
+#### bd_color
 ```md
 [![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bd_color=00005B)](https://github.com/moheb2000/readme-skill-level)
 ```
-The result is:
 
-![Custom border](./screenshots/custom-border.png)
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bd_color=00005B)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
+#### t_color
+```md
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&t_color=006D77)](https://github.com/moheb2000/readme-skill-level)
+```
+
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&t_color=006D77)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
+#### l_color
+```md
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&l_color=006D77)](https://github.com/moheb2000/readme-skill-level)
+```
+
+
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&l_color=006D77)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
+#### bar_color
+```md
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bar_color=FB8500)](https://github.com/moheb2000/readme-skill-level)
+```
+
+
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bar_color=FB8500)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
+#### bar_bg_color
+```md
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bar_bg_color=FDF0D5)](https://github.com/moheb2000/readme-skill-level)
+```
+
+
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&bar_bg_color=FDF0D5)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
 ## Self deployment
 You can deploy this project on cloudflare workers. Create a worker in yout account and run following commands:
 ```
