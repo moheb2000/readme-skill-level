@@ -9,10 +9,8 @@ app.use('/*', cors());
 
 app.route('/v1', v1);
 
-app.notFound(c => {
-  return c.json({
-    error: 'Not found',
-  }, 404);
-});
+app.notFound((c) => c.json({
+  error: 'Not found',
+}, 404));
 
 export default app;
