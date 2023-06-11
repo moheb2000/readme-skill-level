@@ -1,6 +1,6 @@
 {
   "name": "readme-skill-level",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A simple API for making skill level svgs for readme files",
   "main": "app.js",
   "scripts": {
