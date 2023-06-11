@@ -8,9 +8,13 @@ For adding your skill levels in your Github readme add following line to your re
 ```md
 [![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=javascript,js,75)](https://github.com/moheb2000/readme-skill-level)
 ```
-The result is:
+
+<details>
+<summary>Show result</summary>
 
 [![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=javascript,js,75)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
 
 Change the value of `?l=javascript,js,75` to whatever you need. You need to pass all three options here to show your skill correctly. Add your skill like this: `?l=<skill_name>,<skill_icon>,<skill_level_percentage>`. For skill icons add the name of icon from [Skill Icons pack](https://github.com/tandpfun/skill-icons).
 
@@ -22,9 +26,14 @@ If you want to add multiple skills, Add the following lines to your readme.md fi
 ```md
 [![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&l=javascript,js,55)](https://github.com/moheb2000/readme-skill-level)
 ```
-The result is:
 
-![Custom background](./screenshots/multiple-skills.png)
+<details>
+<summary>Show result</summary>
+
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=html,html,90&l=css,css,75&l=javascript,js,55)](https://github.com/moheb2000/readme-skill-level)
+
+</details>
+
 ## Theming
 You can customize the color scheme of your language skill card with these options:
 ### Options
