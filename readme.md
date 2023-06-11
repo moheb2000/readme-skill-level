@@ -1,4 +1,16 @@
+<div align="center">
+
 # Readme Skill Level
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=javascript,js,100)](https://github.com/moheb2000/readme-skill-level)
+
+
+![Last commit](https://img.shields.io/github/last-commit/moheb2000/readme-skill-level?style=flat-square)
+![Code size](https://img.shields.io/github/languages/code-size/moheb2000/readme-skill-level?style=flat-square)
+![License](https://img.shields.io/github/license/moheb2000/readme-skill-level?style=flat-square)
+![Version](https://img.shields.io/github/package-json/v/moheb2000/readme-skill-level?style=flat-square)
+
+</div>
+
 This project aims to show the percentage of your skills in different programming languages and add it to your GitHub readme.
 
 Hono is used to create the API and it's configured to deploy on cloudflare worker but you can also deploy it on vercel, deno deploy, etc based on [hono documentation](https://hono.dev/).
