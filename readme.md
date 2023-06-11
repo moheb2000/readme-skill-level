@@ -10,7 +10,7 @@ For adding your skill levels in your Github readme add following line to your re
 ```
 The result is:
 
-![Custom background](./screenshots/single-skill.png)
+[![My Skill Levels](https://readme-skill-level.moheb2000.workers.dev/v1?l=javascript,js,75)](https://github.com/moheb2000/readme-skill-level)
 
 Change the value of `?l=javascript,js,75` to whatever you need. You need to pass all three options here to show your skill correctly. Add your skill like this: `?l=<skill_name>,<skill_icon>,<skill_level_percentage>`. For skill icons add the name of icon from [Skill Icons pack](https://github.com/tandpfun/skill-icons).
 
